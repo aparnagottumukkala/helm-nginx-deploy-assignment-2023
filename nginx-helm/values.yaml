@@ -1,0 +1,90 @@
+# # Default values for nginx-helm.
+# # This is a YAML-formatted file.
+# # Declare variables to be passed into your templates.
+
+# replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+
+enableHTTPS: true
+certificates:
+  nginxCrt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tDQpNSUlEY3pDQ0Fsc0NGQUZkcGh1MjluQ3ZnVkZ2UGtySSt2aDVRUndyTUEwR0NTcUdTSWIzRFFFQkN3VUFNSFl4DQpDekFKQmdOVkJBWVRBbE5ITVJJd0VBWURWUVFJREFsVGFXNW5ZWEJ2Y21VeEVqQVFCZ05WQkFjTUNWTnBibWRoDQpjRzl5WlRFVE1CRUdBMVVFQ2d3S2JHOWpZV3dnZEdWemRERU9NQXdHQTFVRUN3d0ZiRzlqWVd3eEdqQVlCZ05WDQpCQU1NRVc1bGVIVnpMV3QxWW1VdVkyOXRMbk5uTUI0WERUSXpNRGN3T0RBNU1Ea3lNRm9YRFRJek1EZ3dOekE1DQpNRGt5TUZvd2RqRUxNQWtHQTFVRUJoTUNVMGN4RWpBUUJnTlZCQWdNQ1ZOcGJtZGhjRzl5WlRFU01CQUdBMVVFDQpCd3dKVTJsdVoyRndiM0psTVJNd0VRWURWUVFLREFwc2IyTmhiQ0IwWlhOME1RNHdEQVlEVlFRTERBVnNiMk5oDQpiREVhTUJnR0ExVUVBd3dSYm1WNGRYTXRhM1ZpWlM1amIyMHVjMmN3Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBDQpBNElCRHdBd2dnRUtBb0lCQVFEWGVNOHBSdE9Va00yTDVLT2o2V3BaV0V2UXJNRUdyQ2VuellSWGlIUnlWMXFyDQpwYitVc05LU0hyM3VLOG5FYjBwejhxTFM4VDhwcHlWY2VUd1h1aWZWTWV4TDlvclhnNXRFTVRPQk42OTJFZ2NFDQpLaXFuL0o3amRiT3dCWW9XYWZLc1dXMmsyWk5yUlhZZmJ0OWQ4dHlOZURCT3VVaWFWUXlpRWwyYlcwRk4zTmRoDQpVWmxSS3pOejZtWjN3cStHNDlXSkhXMWdvWDhQV0ZrMHljV2k3blNDUkNKRU5HSlFMamQwWDJLSjFmclkzYnNKDQpjRmRyR2I5WVZsMVZVQXVWYjRoQ2UvQ1M0K00xVjVnOEx4NkpDVkpyWktuVlBPSlRCVHBuMkZXNWFqcnRtUytEDQpONlZPMFd2YmRETGl4azhUMlpqZWpBbFY3cTFGaUxBdnNxRmFCREVEQWdNQkFBRXdEUVlKS29aSWh2Y05BUUVMDQpCUUFEZ2dFQkFDWTJqcjFJbHZpMW1ZME55bkJNd0srVTJKdmlNbUo0N0ZVamR0QkNaUFlsb3RFdDJIZm9kQlNDDQpUbG9JMWZSL0ptaWlJdW1XYkF2OEVMb25FU2EvUmtOc1pTeTJNYlVmdS9GdjU3bW8yZnBnek1aVWlzb1ZTM0hCDQpXaGp0Z2x3SjhTUDdLTU12NFlGSkNvbFJqeXB5b3dWSFVHd0oxZVU4aGlQeGE4b1l5UUx0TXlKeEUvUENmTFVVDQpRc3ZqcGZYNmJGNjlsRUhwNEIycHVXT2cyZkgrV1hSdTQ3NGRxdlptZDBsbERwakU0QmF4ODV0alZVSzIyS0JNDQpqcE5GdVMwNzl3dWVsWEdnc1locjN4VmUzQlo5WCtlMHdrNHh6MFFpcm5DZnNGZE9ObFpWT3NtVnBaa3lSaXhrDQpLMTI3L0JKZEVMZzAwbGRGbDdpK2RKQjVURTNnYTE0PQ0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQ0K
+  nginxKey: LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tDQpNSUlFdndJQkFEQU5CZ2txaGtpRzl3MEJBUUVGQUFTQ0JLa3dnZ1NsQWdFQUFvSUJBUURYZU04cFJ0T1VrTTJMDQo1S09qNldwWldFdlFyTUVHckNlbnpZUlhpSFJ5VjFxcnBiK1VzTktTSHIzdUs4bkViMHB6OHFMUzhUOHBweVZjDQplVHdYdWlmVk1leEw5b3JYZzV0RU1UT0JONjkyRWdjRUtpcW4vSjdqZGJPd0JZb1dhZktzV1cyazJaTnJSWFlmDQpidDlkOHR5TmVEQk91VWlhVlF5aUVsMmJXMEZOM05kaFVabFJLek56Nm1aM3dxK0c0OVdKSFcxZ29YOFBXRmswDQp5Y1dpN25TQ1JDSkVOR0pRTGpkMFgyS0oxZnJZM2JzSmNGZHJHYjlZVmwxVlVBdVZiNGhDZS9DUzQrTTFWNWc4DQpMeDZKQ1ZKclpLblZQT0pUQlRwbjJGVzVhanJ0bVMrRE42Vk8wV3ZiZERMaXhrOFQyWmplakFsVjdxMUZpTEF2DQpzcUZhQkRFREFnTUJBQUVDZ2dFQkFOTU5tVlRqOUNDa1NVRktmZUx5b2VITHM4ODlONERTcGJFZWhBKzlMOXBEDQpxQ05USWJtQ0RXOWt2ME1JRHdUaXdibWFvMVFkUzNJQUwzOUpuTXZjNG1GWUdnMDUrenNueExEaHhJSkFTaFJMDQppaVhSSzZFSnQ1UXkyUU9FR1lMazJmZHBUUlZZcktZNURuK3hlUWFyK001MU9GUVQ5b0o4NWZmbUoxd2g0WEJpDQpJVWpUemgxeTE2QXpXS2orNjlqL2l2S0FiTms1dG9BOTJka0dUVjUzMmhEd3p0MHpRQVF6NWFPS0d3YUtmbk9vDQprelJnOTFwck9PZjVLbnJ5KzRnQWlBM0pGS0VIeGhRNUVVV2VqTW84QmIza0FyRW10WnkyU2VnQ2JRRWc2ZkFHDQpLVTRwQk1RS0s2SkRmbHBBU0pvL3lXUXFMMnZhR1BhT1BQcWZCQWQrTFpFQ2dZRUE3cGhVV2NFU2JMbWVISVZ1DQpyMzZic050RGY3NEFjcytoRVVkNEp0ODJsdzh2WEoxM0JCUFpIazVTZWNHVnRHcW9ZalBsTXVWMjU1NUlrbzcyDQpYTm5CYXFKeVJDSWFLMkJBQTdhWlpsNElyTC8wbGdJWWRHOHdXVzZPWks5dVhnS1I5MFNQTCtsa3RacWtOTkl6DQpDcUErbHoyNkIwaFdlMXRyMEI2SDBjcDJqeWtDZ1lFQTV6Q3FEQ1FVSlZ5M1lPTld5TXVWVXAvWERUR0pNRnN2DQpCd29KSHdqZFpNdFJ6Z2V2MlJka1pJc2tnUDhpcnpPeVhOQjRXenhJY3pGekZMRUNRcUNQeVhZeEFtS01uaStNDQovUFhLaXQrWlFrOUYwWXhKVDV5UkhkNXowcjE2bDYvbDZ6YzhNWUF1STArQTc3YUtUSXlOZmhmU3UwTXV6amR2DQpVQUdNNDI5T1FFc0NnWUVBM0dOb3h0OUluWlYzTHZFeHBIbFdacTZpVXNTMnRWYUVlT21EV3FTa1VEUitreFlBDQpjWXZENmZKK3pHaThWOEtOZHVob3RmS3ZPcE5DaGQzNFF4d0JSUFo0aGViYU5XYmF1cE5ZYnU0OUpSVEtZQ1hmDQpZTzJ6dzJnVHIzMDhmU255bW15QnRzZm5kcmc1SlhGa0pGU1FmRE5RT3BuZkNHTVIyMVBZTVRqSytzRUNnWUVBDQp1V3d6aHFkTkxTWXV3ZHUwV0RuSVdzdHVQTnUxRDM2aXVqK1hUemZaOGFTTXlQVXJXYS9FU2t1N0RHY1ZGM1ljDQpJUXJtN1MzdFljNlFZVkVTNGdOTEw2Ykc2Z1hHaUh6VTFISUNiOTJrV3lXZmR0RFFYN1RRUXllT3Q4QlcyZUF2DQpSTGM1Wk81TWt1K0tGempOdFZXcGlpOXJTZHc1WnhYWkJrOG9BNlhiR2Y4Q2dZQmpWWW9pYmc0bGlVMVZwdlNaDQorNXVmVHJvOTk0WFR2SHc2TGMyNTFUMFJJSzh5VStvNHVpcEFWTmhDWVQwOVp5dHE5UU56NkV0YWhKRGhldDNNDQorZGpONWdRMTZCNHhadHU5Qjc1TTRXLy8wWXFocVFIcUtwWW1CSDFQMzJ2UkZkWFY0QjRSZHpwQS93ZEdOeEM5DQpEeDZIMW1SLzJ1OWhXeWpXa2gzSHQxMnQvdz09DQotLS0tLUVORCBQUklWQVRFIEtFWS0tLS0tDQo=
+
+#   # Overrides the image tag whose default is the chart appVersion.
+#   tag: ""
+
+kubectl create secret generic nginx-certs-keys --from-file=../certificate.crt --from-file=../private.key
+
+# imagePullSecrets: []
+# nameOverride: ""
+# fullnameOverride: ""
+
+# serviceAccount:
+#   # Specifies whether a service account should be created
+#   create: true
+#   # Annotations to add to the service account
+#   annotations: {}
+#   # The name of the service account to use.
+#   # If not set and create is true, a name is generated using the fullname template
+#   name: ""
+
+# podAnnotations: {}
+
+# podSecurityContext: {}
+#   # fsGroup: 2000
+
+# securityContext: {}
+#   # capabilities:
+#   #   drop:
+#   #   - ALL
+#   # readOnlyRootFilesystem: true
+#   # runAsNonRoot: true
+#   # runAsUser: 1000
+
+# service:
+#   type: ClusterIP
+#   port: 80
+
+# ingress:
+#   enabled: false
+#   className: ""
+#   annotations: {}
+#     # kubernetes.io/ingress.class: nginx
+#     # kubernetes.io/tls-acme: "true"
+#   hosts:
+#     - host: chart-example.local
+#       paths:
+#         - path: /
+#           pathType: ImplementationSpecific
+#   tls: []
+#   #  - secretName: chart-example-tls
+#   #    hosts:
+#   #      - chart-example.local
+
+# resources: {}
+#   # We usually recommend not to specify default resources and to leave this as a conscious
+#   # choice for the user. This also increases chances charts run on environments with little
+#   # resources, such as Minikube. If you do want to specify resources, uncomment the following
+#   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+#   # limits:
+#   #   cpu: 100m
+#   #   memory: 128Mi
+#   # requests:
+#   #   cpu: 100m
+#   #   memory: 128Mi
+
+# autoscaling:
+#   enabled: false
+#   minReplicas: 1
+#   maxReplicas: 100
+#   targetCPUUtilizationPercentage: 80
+#   # targetMemoryUtilizationPercentage: 80
+
+# nodeSelector: {}
+
+# tolerations: []
+
+# affinity: {}
