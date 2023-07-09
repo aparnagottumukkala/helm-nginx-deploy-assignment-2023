@@ -15,10 +15,10 @@ REVISION: 1
 TEST SUITE: None
 
 # Log post helm installation
-![Alt text](kubectl-log)
+![My Image](images/kubectl-log)
 
 # Screencapture of certificate post nginx setup
-![Alt text](nexus-cert.PNG)
+![My Image](images/nexus-cert.PNG)
 
 # Screencapture of nginx landing page
-![Alt text](nginx-browser-screen.PNG)
+![My Image](images/nginx-browser-screen.PNG)
