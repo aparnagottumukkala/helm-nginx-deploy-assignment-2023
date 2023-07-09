@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: nginx-helm
-  name: nginx-helm
+  name: {{ .Release.Name }}-helm
   namespace: default
 spec:
   progressDeadlineSeconds: 600
@@ -14,9 +14,9 @@ spec:
       app: nginx-helm
   strategy:
     rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
+      maxSurge: {{ .Values.strategy.maxSurge }}
+      maxUnavailable: {{ .Values.strategy.maxUnavailable }}
+    type: {{ .Values.strategy.type }}
   template:
     metadata:
       labels:
@@ -41,8 +41,7 @@ spec:
         - name: configmap-volume
           configMap:
             name: nginx-configmap 
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      terminationGracePeriodSeconds: 30
+      dnsPolicy: {{ .Values.dnsPolicy }}
+      restartPolicy: {{ .Values.restartPolicy }}
+      schedulerName: {{ .Values.schedulerName }}
+      terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
